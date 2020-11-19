@@ -13,7 +13,7 @@ const routes: Routes = [
         loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule)
       },
       {
-        path: 'confirm',
+        path: '',
         component: ConfirmDialogComponent,
         outlet: 'popup'
       }
