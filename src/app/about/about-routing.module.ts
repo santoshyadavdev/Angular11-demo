@@ -5,7 +5,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 
 const routes: Routes = [
   {
-    path: '', component: AboutComponent,
+    path: 'test-secondary', component: AboutComponent,
     children: [
       {
         path: '',
@@ -13,11 +13,16 @@ const routes: Routes = [
         loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule)
       },
       {
-        path: '',
+        path: 'confirm',
         component: ConfirmDialogComponent,
         outlet: 'popup'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: 'test-secondary',
+    pathMatch: 'full'
   }
 ];
 
