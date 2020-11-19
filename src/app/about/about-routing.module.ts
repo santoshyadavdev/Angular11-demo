@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,11 @@ const routes: Routes = [
         path: '',
         outlet: 'contactus',
         loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule)
+      },
+      {
+        path: 'confirm',
+        component: ConfirmDialogComponent,
+        outlet: 'popup'
       }
     ]
   }
